@@ -5,7 +5,6 @@
  */
 var removeElement = function(nums, val) {
     let start = 0;
-    // let count = 0;
     let end = nums.length-1;
     while(start<=end){
         if (nums[start]==val){
@@ -13,8 +12,6 @@ var removeElement = function(nums, val) {
             nums[start] = nums[end];
             end--;
         }else start++;
-        console.log(nums,start,end,"else")
     }
     return start;
-    console.log(nums,start,end,"if");
 };
