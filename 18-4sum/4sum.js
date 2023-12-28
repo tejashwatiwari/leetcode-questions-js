@@ -8,7 +8,6 @@ var fourSum = function(nums, target) {
     nums.sort(function(a, b){return a - b})
     for (let i = 0;i<nums.length;i++){
         if(nums[i]==nums[i-1])continue
-        // if(nums[i]+nums[i+1]+nums[i+2]+nums[i+3]>target)break
         for (let j=i+1;j<nums.length;j++){
             if(j>i+1&&nums[j]==nums[j-1])continue
             let l = j+1,r = nums.length-1;
