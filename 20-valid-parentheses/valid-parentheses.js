@@ -4,7 +4,6 @@
  */
 var isValid = function(s) {
     if(s.length==1)return false
-
     let stack = []
     for (let i =0;i<s.length;i++){
         let char=s[i], top=stack[stack.length-1]
