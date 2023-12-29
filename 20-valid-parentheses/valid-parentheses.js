@@ -7,9 +7,9 @@ var isValid = function(s) {
 
     let blankArr = []
     for (let i =0;i<s.length;i++){
-        let char=s[i]
+        let char=s[i], top=blankArr[blankArr.length-1]
         if (char=='(' || char=='[' || char=='{')blankArr.push(char);
-        else if((char==')' && blankArr[blankArr.length-1]=='(') ||(char==']' && blankArr[blankArr.length-1]=='[')|| (char=='}' && blankArr[blankArr.length-1]=='{'))blankArr.pop()
+        else if((char==')' && top=='(') ||(char==']' && top=='[')|| (char=='}' && top=='{'))blankArr.pop()
         else blankArr.push(char)
         
     }
