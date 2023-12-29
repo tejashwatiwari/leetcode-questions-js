@@ -5,14 +5,13 @@
 var isValid = function(s) {
     if(s.length==1)return false
 
-    let blankArr = []
+    let stack = []
     for (let i =0;i<s.length;i++){
-        let char=s[i], top=blankArr[blankArr.length-1]
-        if (char=='(' || char=='[' || char=='{')blankArr.push(char);
-        else if((char==')' && top=='(') ||(char==']' && top=='[')|| (char=='}' && top=='{'))blankArr.pop()
-        else blankArr.push(char)
-        
+        let char=s[i], top=stack[stack.length-1]
+        if (char=='(' || char=='[' || char=='{')stack.push(char);
+        else if((char==')' && top=='(') ||(char==']' && top=='[')|| (char=='}' && top=='{'))stack.pop()
+        else stack.push(char)    
     }
-    if (blankArr.length == 0) return true;
+    if (stack.length == 0) return true;
     else return false
 };
