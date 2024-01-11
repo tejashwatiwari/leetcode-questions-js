@@ -13,6 +13,8 @@ var uniqueOccurrences = function(arr) {
     for (key in map){
         if (newMap[map[key]]) return false;
         else newMap[map[key]] = true;
+        console.log(newMap)
+
     }
     return true;
 };
