@@ -20,4 +20,7 @@ var reverseList = function(head) {
         current = nextNode
     }
     return prev
+
+
+
 };
