@@ -3,11 +3,11 @@
  * @return {number}
  */
 var numberOfBeams = function(bank) {
-    let count, prev = ans = 0;
+    let ans = count = prev = 0;
     for (let i = 0;i<bank.length;i++){
-        count = 0;
-        for (let j = 0;j<bank[0].length;j++){
-            if (bank[i][j]=='1') count++;
+        let count = 0
+        for (let j = 0;j<bank[i].length;j++){
+            if (bank[i][j] == '1') count++
         }
         if (count!==0) {
             ans += count*prev
@@ -15,6 +15,4 @@ var numberOfBeams = function(bank) {
         }
     }
     return ans;
-
-
 };
