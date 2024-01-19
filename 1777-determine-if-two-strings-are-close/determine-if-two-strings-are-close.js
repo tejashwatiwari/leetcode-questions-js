@@ -4,15 +4,16 @@
  * @return {boolean}
  */
 var closeStrings = function(word1, word2) {
-    if (word1.length!=word2.length) return false;
-      let map1={}, map2={}
-    for(let word of word1){
-        if(map1[word]==undefined)map1[word]=1
-        else map1[word]++
+    let map1 = {}, map2 = {}
+    for (let i = 0;i<word1.length;i++){
+        let val = map1[word1[i]]
+        if(val == undefined) map1[word1[i]] = 1
+        else map1[word1[i]] = val + 1
     }
-     for(let char of word2){
-        if(map2[char]==undefined)map2[char]=1
-        else map2[char]++
+    for (let i = 0;i<word2.length;i++){
+        let val = map2[word2[i]]
+        if(val == undefined) map2[word2[i]] = 1
+        else map2[word2[i]] = val + 1
     }
     let chars1 = Object.keys(map1).sort();
     let chars2 = Object.keys(map2).sort();
@@ -22,4 +23,5 @@ var closeStrings = function(word1, word2) {
     let frequencies2 = Object.values(map2).sort();
 
     return frequencies1.join('') === frequencies2.join('');
+    
 };
