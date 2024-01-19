@@ -4,7 +4,7 @@
  * @return {number}
  */
 var findMedianSortedArrays = function(nums1, nums2) {
-    for (let i = 0;i<nums2.length;i++){
+    for (let i = 0 ; i <nums2.length; i++){
         nums1.push(nums2[i])
     }
     nums1.sort((a,b)=>(a-b))
