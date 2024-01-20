@@ -16,7 +16,7 @@ var minSteps = function(s, t) {
         else maps2[t[i]] = val + 1
     }
     for (let key in maps2){
-        count += Math.max(0, maps2[key] - (maps1[key] || 0));
+        count+= Math.max(0, maps2[key]-(maps1[key] || 0))
     }
     return count;
     
