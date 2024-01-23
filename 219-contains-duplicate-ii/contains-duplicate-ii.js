@@ -8,9 +8,8 @@ var containsNearbyDuplicate = function(nums, k) {
     for (let i = 0;i<nums.length;i++){
         if (map[nums[i]] == undefined) {
             map[nums[i]]=i;}
-        else {
-            let diff = map[nums[i]] - i
-            if (Math.abs(diff)<=k) return true
+        else { 
+            if (Math.abs(map[nums[i]] - i)<=k) return true
             else map[nums[i]] = i
         }
     }
