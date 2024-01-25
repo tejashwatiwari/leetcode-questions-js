@@ -4,7 +4,7 @@
  * @return {number[]}
  */
 var topKFrequent = function(nums, k) {
-    if (nums.length == 1) return [nums[0]]
+
     let map = {}, blankArr = [], pairs=[]
     for (let i = 0;i<nums.length;i++){
         let val = map[nums[i]]
