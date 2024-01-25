@@ -4,7 +4,7 @@
  * @return {number[]}
  */
 var topKFrequent = function(nums, k) {
-    let map={}, frequentArray=[], sortedArray=[], outputArray=[]
+    let map={}, frequentArray=[], outputArray=[]
     for(let i=0;i<nums.length;i++){
         let val=map[nums[i]]
         if(val==undefined) map[nums[i]]=1
