@@ -18,11 +18,5 @@ var topKFrequent = function(nums, k) {
     for(let i = 0;i<k;i++){
         pairs.push(blankArr[i][0])
     }
-    console.log(pairs,"pairs")
-
     return pairs
-    // return blankArr
-    // for (let i = 0;i<bl)
-    // blankArr.sort((a,b)=>(a-b))
-    // return blankArr
 };
