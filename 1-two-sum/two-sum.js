@@ -4,12 +4,10 @@
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-    let map = {}
-    for (let i =0;i<nums.length;i++){
-     let requiredNum = target - nums[i];
-          if(map[requiredNum] !== undefined){
-            return [map[requiredNum], i];
-        }
-        map[nums[i]] = i;
+    let maps = {}
+    for (let i = 0;i<nums.length;i++){
+        let finalNum = target - nums[i]
+        if (maps[finalNum]!==undefined) {return [maps[finalNum],i]}
+         maps[nums[i]] = i;
     }
 };
