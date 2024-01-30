@@ -3,7 +3,7 @@
  * @return {number}
  */
 var minSwaps = function(s) {
-    let l = 0, r = s.length-1, count = 0, vari = 0
+    let count = 0, vari = 0
     for (let i = 0;i<s.length;i++){
         if (s[i]=='[') count++
         else if (count == 0) {vari++
