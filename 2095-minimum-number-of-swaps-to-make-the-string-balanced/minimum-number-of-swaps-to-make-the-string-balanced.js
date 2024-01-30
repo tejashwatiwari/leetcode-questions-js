@@ -10,18 +10,6 @@ var minSwaps = function(s) {
         count++
         }
         else count--
-    }
-    // console.log(vari,'vari')
-    // console.log(count,'count')
+    } 
     return vari
-    // while (l<r){
-    //     if (s[l]=='[' && s[r]==']') {
-    //         l++
-    //         r--
-    //     }
-    //     else if (s[r]=='[' && s[l]==']'){
-    //          stack.push(s[r])
-    //          l++
-    //          r--
-    //     }
 };
