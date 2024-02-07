@@ -10,11 +10,7 @@ var frequencySort = function(s) {
         else map[s[i]] = val + 1
     }
     let finalArr = Object.keys(map);
-    // finalArr.sort((a, b) => b - a);
     finalArr.sort((a, b) => map[b] - map[a]);
-
-        console.log(finalArr)
-
     let finalStr = ''
     for (let char of finalArr) {
         finalStr += char.repeat(map[char]);
