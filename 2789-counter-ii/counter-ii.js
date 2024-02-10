@@ -5,13 +5,11 @@
 var createCounter = function(init) {
         let counter = init
         function increment(){
-            // counter = 
             counter++
             return counter
 
         }
         function decrement(){
-            // counter =  init
             counter--
             return counter
         }
