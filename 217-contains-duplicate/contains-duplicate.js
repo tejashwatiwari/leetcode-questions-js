@@ -3,7 +3,7 @@
  * @return {boolean}
  */
 var containsDuplicate = function(nums) {
-    let maps = {}
+     let maps = {}
     for(let i = 0;i<nums.length;i++){
         let val = maps[nums[i]]
         if (val == undefined) maps[nums[i]] = 1
