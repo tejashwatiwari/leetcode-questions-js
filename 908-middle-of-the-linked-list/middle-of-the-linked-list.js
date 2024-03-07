@@ -1,8 +1,3 @@
-
-/**
- * @param {ListNode} head
- * @return {ListNode}
- */
 var middleNode = function(head) {
     let slow=fast=head
     while(fast && fast.next){
