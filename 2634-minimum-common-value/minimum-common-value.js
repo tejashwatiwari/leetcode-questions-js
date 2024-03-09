@@ -4,10 +4,15 @@
  * @return {number}
  */
 var getCommon = function(nums1, nums2) {
-    let min=Number.MAX_SAFE_INTEGER,map={}
-    for(let one of nums1) map[one]=(map[one]=0)|1
-    for(let two of nums2) {
-        if(map[two]!==undefined) min=Math.min(two,min)   
+    let i = 0, j = 0;
+    while (i < nums1.length && j < nums2.length) {
+        if (nums1[i] === nums2[j]) {
+            return nums1[i];
+        } else if (nums1[i] < nums2[j]) {
+            i++;
+        } else {
+            j++;
+        }
     }
-return min==Number.MAX_SAFE_INTEGER?-1:min
+    return -1;    
 };
