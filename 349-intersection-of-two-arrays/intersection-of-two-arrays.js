@@ -15,9 +15,7 @@ var intersection = function(nums1, nums2) {
     for (let j=0;j<nums2.length;j++){
         let val = map[nums2[j]]
         if (val!==undefined){
-            map[nums2[j]]=val-1
-            // if(map[nums2[j]]==0)
-            
+            // map[nums2[j]]=val-1            
             if(!blankArr.includes(nums2[j])) 
             blankArr.push(nums2[j])       
         }
