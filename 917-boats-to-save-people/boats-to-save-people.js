@@ -9,7 +9,6 @@ var numRescueBoats = function(people, limit) {
     let l = 0, r = people.length-1
     while(l<=r){
         let diff = limit - people[r]
-        console.log(diff)
         count++
         r--
         if(diff >= people[l]) l++;
