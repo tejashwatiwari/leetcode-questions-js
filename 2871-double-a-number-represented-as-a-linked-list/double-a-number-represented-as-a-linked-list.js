@@ -10,32 +10,42 @@
  * @return {ListNode}
  */
 var doubleIt = function(head) {
-     let digits = [];
-    let current = head;
-    while (current) {
-        digits.push(current.val);
-        current = current.next;
-    }
+    let current = head; // Pointer to traverse the original linked list
+  let digits = []; // Array to hold the digits of the number
 
-    // Double the number represented by digits array
-    let result = [];
-    let carry = 0;
-    for (let i = digits.length - 1; i >= 0; i--) {
-        let sum = 2 * digits[i] + carry;
-        result.unshift(sum % 10); // prepend the digit
-        carry = Math.floor(sum / 10);
-    }
-    if (carry > 0) {
-        result.unshift(carry); // if there's any carry left, add it to the front
-    }
+  // Traverse the linked list and collect its values into the 'digits' array
+  while (current) {
+    digits.push(current.val);
+    current = current.next;
+  }
 
-    // Convert the result array back to linked list
-    let dummyHead = new ListNode(0);
-    let node = dummyHead;
-    for (let val of result) {
-        node.next = new ListNode(val);
-        node = node.next;
-    }
+  let carry = 0; // Initialize carry for managing the doubling process
+  let length = digits.length; // Store the length of the digits array
 
-    return dummyHead.next;
+  // Process each digit from least significant to most significant (right to left)
+  for (let i = length - 1; i >= 0; i--) {
+    carry += 2 * digits[i]; // Double the current digit and add the carry
+    digits[i] = carry % 10; // Update the current digit after doubling
+    carry = Math.trunc(carry / 10); // Calculate new carry
+  }
+
+  // If there is a remaining carry after the last iteration, prepend it to the array
+  if (carry) digits.unshift(carry);
+
+  // Variables to create the new linked list representing the doubled value
+  let newHead = null; // Head of the new linked list
+  let tail = null; // Tail to help in appending new nodes
+
+  // Convert the array back to a linked list
+  for (let value of digits) {
+    current = new ListNode(value); // Create a new node for each digit
+    if (newHead) {
+      tail.next = current; // Append the new node to the list
+      tail = tail.next; // Move the tail pointer
+    } else {
+      tail = newHead = current; // Initialize the head and tail if it's the first node
+    }
+  }
+
+  return newHead; // Return the head of the new doubled linked list
 };
