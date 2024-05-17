@@ -10,11 +10,9 @@ var isHappy = function(n) {
         for(let i = 0;i<strNum.length;i++){
             total += parseInt(strNum[i])**2;
         }
-
         if(total == 1){
             return true;
         }
-    
         strNum = total.toString();
         total = 0;
     }
