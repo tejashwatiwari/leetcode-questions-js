@@ -4,14 +4,11 @@
  * @return {string}
  */
 var replaceWords = function(dictionary, sentence) {
-      dictionary.sort()
-    const words = sentence.split(" ")
-    return words.map((word) => {
-        for (let root of dictionary) {
-            if (word.startsWith(root)) {
-                return root
-            }
+        const arr = sentence.split(' ');
+    for (let i = 0; i < arr.length; i++) {
+        for (let word of dictionary) {
+            if (arr[i].startsWith(word)) arr[i] = word;
         }
-        return word
-    }).join(" ")
+    }
+    return arr.join(' '); 
 };
