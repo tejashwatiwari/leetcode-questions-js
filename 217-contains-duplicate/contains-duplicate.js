@@ -3,14 +3,12 @@
  * @return {boolean}
  */
 var containsDuplicate = function(nums) {
-     let maps = {}
-    for(let i = 0;i<nums.length;i++){
-        let val = maps[nums[i]]
-        if (val == undefined) maps[nums[i]] = 1
-        else maps[nums[i]] = val + 1;
+    let map = {}
+    for (let i = 0;i<nums.length;i++){
+        map[nums[i]] = (map[nums[i]] || 0) + 1;
     }
-    for (keys in maps){
-        if (maps[keys]>1) return true
+    for (key in map){
+        if (map[key]>1) return true
     }
     return false
 };
