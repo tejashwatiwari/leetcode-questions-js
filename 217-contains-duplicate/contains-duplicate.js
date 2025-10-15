@@ -3,12 +3,21 @@
  * @return {boolean}
  */
 var containsDuplicate = function(nums) {
-    let map = {}
-    for (let i = 0;i<nums.length;i++){
-        map[nums[i]] = (map[nums[i]] || 0) + 1;
+    let maps = {};
+    let found=false;
+  for (let i =0;i<nums.length;i++){
+    let value = maps[nums[i]];
+    if (value == undefined){
+      maps[nums[i]] = 1;
     }
-    for (key in map){
-        if (map[key]>1) return true
+     else {
+        found=true
+      break
+    }
+  }
+    console.log('found', found)
+    if(found){
+        return true
     }
     return false
-};
+    };
