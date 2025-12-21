@@ -1,3 +1,2 @@
 -- Write your PostgreSQL query statement below
-with tc as (select class, count(student) as ds from Courses GROUP BY class)
-select class from tc where ds >= 5
+select class from Courses group by class having count(student)>=5
